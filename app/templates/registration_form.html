@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swimming Class Registration</title>
+    <!-- Add FontAwesome for the hamburger icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    
+    <!-- Add CSS styles for the hamburger icon -->
+    <style>
+    body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.navbar {
+    background-color: #333;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icon {
+    cursor: pointer;
+    color: white;
+    font-size: 24px;
+}
+
+.menu {
+    display: none;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+/* Show the menu when the hamburger is clicked */
+.menu.show {
+    display: flex;
+}
+</style>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</head>
+</head>
+<body>
+
+<div class="navbar">
+    <i class="icon fa fa-bars" onclick="toggleMenu()"></i>
+        <div class="menu" id="navMenu">
+            <a href="{{ url_for('home') }}">Home</a>
+        </div>
+</div>
+<!-- Registration Form -->
+<form method="post" action="{{ url_for('registration') }}">
+    <h2>Swimming Class Registration</h2>
+
+    <!-- Personal Information -->
+    <label for="fullName">Full Name:</label>
+    <input type="text" id="fullName" name="fullName" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <!-- Additional Information -->
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age"  required>
+
+    <lable for="experience">experience</lable>
+    <input type="experience" id="ecperience" name="experience " required>
+    </form>
+    </body>
+</html>
